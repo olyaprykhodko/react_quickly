@@ -17,8 +17,8 @@ services:
   frontend:
     container_name: ${PROJECT_TAG}-frontend
     build:
-      context: .
-      dockerfile: Dockerfile.frontend
+      context: ./frontend
+      dockerfile: Dockerfile
     env_file:
       - ".env"
     ports:
@@ -35,8 +35,8 @@ services:
   backend:
     container_name: ${PROJECT_TAG}-backend
     build:
-      context: .
-      dockerfile: Dockerfile.backend
+      context: ./backend
+      dockerfile: Dockerfile
     env_file:
       - ".env"
     ports:
