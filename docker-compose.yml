@@ -63,7 +63,7 @@ services:
     restart: unless-stopped
     volumes:
       - "mariadb_data:/var/lib/mysql"
-      - "./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql:ro"
+      - "./db/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql:ro"
     ports:
       - "127.0.0.1:3306:3306/tcp"
     healthcheck:
