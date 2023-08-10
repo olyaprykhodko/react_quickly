@@ -5,8 +5,13 @@ services:
     env_file:
       - ".env"
     ports:
-      - "80:80/tcp"
-      - "443:443/tcp"
+      - "0.0.0.0:80:80/tcp"
+    configs:
+      - source: nginx
+        target: /etc/nginx/conf.d/default.conf
+        uid: "0"
+        gid: "0"
+        mode: 0644
     restart: unless-stopped
     healthcheck:
       test: wget --spider --no-verbose --tries=1 http://${NGINX_HOST}:${NGINX_PORT} || exit 1
@@ -22,12 +27,12 @@ services:
     env_file:
       - ".env"
     ports:
-      - "3000:3000/tcp"
+      - "127.0.0.1:3000:3000/tcp"
     restart: unless-stopped
     volumes:
       - "frontend_data:/data"
     healthcheck:
-      test: wget --spider --no-verbose --tries=1 http://127.0.0.1:${APP_PORT} || exit 1
+      test: wget --spider --no-verbose --tries=1 http://127.0.0.1:${FRONTEND_PORT} || exit 1
       interval: 30s
       timeout: 5s
       retries: 2
@@ -40,18 +45,18 @@ services:
     env_file:
       - ".env"
     ports:
-      - "3500:3500/tcp"
+      - "127.0.0.1:3500:3500/tcp"
     restart: unless-stopped
     volumes:
       - "backend_data:/data"
     healthcheck:
-      test: wget --spider --no-verbose --tries=1 http://127.0.0.1:${APP_PORT} || exit 1
+      test: wget -q -O - 127.0.0.1:${BACKEND_PORT} | grep "server work" || exit 1
       interval: 30s
       timeout: 5s
       retries: 2
 
   db:
-    container_name: ${PROJECT_TAG}-mariadb
+    container_name: ${PROJECT_TAG}-db
     image: mariadb:lts
     env_file:
       - ".env"
@@ -60,7 +65,7 @@ services:
       - "mariadb_data:/var/lib/mysql"
       - "./init_db.sql:/docker-entrypoint-initdb.d/init_db.sql:ro"
     ports:
-      - "3306:3306/tcp"
+      - "127.0.0.1:3306:3306/tcp"
     healthcheck:
       test: mysqladmin ping --silent -u root --password=${MARIADB_ROOT_PASSWORD} | grep -q "mysqld is alive"
       interval: 30s
@@ -71,3 +76,7 @@ volumes:
   frontend_data:
   backend_data:
   mariadb_data:
+
+configs:
+  nginx:
+    file: ./nginx/default.conf
