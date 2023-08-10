@@ -1,12 +1,3 @@
--- phpMyAdmin SQL Dump
--- version 4.9.0.1
--- https://www.phpmyadmin.net/
---
--- Хост: 127.0.0.1:3306
--- Время создания: Дек 22 2020 г., 11:17
--- Версия сервера: 10.3.13-MariaDB-log
--- Версия PHP: 7.1.32
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
