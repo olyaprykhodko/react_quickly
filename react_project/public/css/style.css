@@ -1,0 +1,330 @@
+body {
+    background-color: #A6C4FA;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.hide {
+    display: none;
+}
+
+.active {
+    color: rgb(11, 22, 91);
+    font-weight: bold;
+}
+
+/* Navigation */
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    padding: 10px 0;
+    margin-top: 0;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    text-align: center;
+    font-family: Roboto;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    border-radius: 100px;
+    background: #FFF;
+    box-shadow: 8px 10px 42px 0px rgba(0, 0, 0, 0.42);
+}
+
+.menu-list li {
+    margin: 0 40px;
+    
+}
+
+.menu-list li a {
+    text-decoration: none;
+}
+
+/* Note (Search) Component */
+
+.search-header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 100px;
+}
+
+.search-box {
+    border-radius: 4px;
+    background: var(--surface-light, #F8FAFC);
+    border: 2px solid var(--onyx, #000);
+    box-shadow: 4px 4px 0px 0px #000;
+    font-family: 'Lustria';
+    padding: 20px;
+}
+
+.form-control {
+    display: flex;
+    align-items: center;
+    width: 600px;
+    height: 28px;
+    gap: 10px;
+    color: var(--text-secondary-grey-3, #111112); 
+    font-size: 14px;
+}
+
+.btn-search {
+    display: flex;
+    width: 80px;
+    margin-top: 18px;
+    height: 28px;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 100px;
+    border: 1px solid var(--onyx, #000);
+    background: var(--white,#A6C4FA);
+    font-family: 'Lustria';
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.search-result {
+    border-radius: 4px;
+    background: var(--surface-light, #dee8d9);
+    border: 2px solid var(--onyx, #000);
+    box-shadow: 4px 4px 0px 0px #000;
+    font-family: 'Lustria';
+    padding: 20px;
+
+}
+
+.btn-back {
+    width: 120px;
+    margin-top: 18px;
+    height: 28px;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 100px;
+    border: 1px solid var(--onyx, #000);
+    background: var(--white,#A6C4FA);
+    font-family: 'Lustria';
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Create Component */
+
+.note-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    margin-top: 100px;
+}
+
+.date {
+    font-family: 'Lustria';
+}
+
+.brand {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.note-field {
+    display: flex;
+    align-items: center;
+    width: 645px;
+    height: 170px;
+    gap: 10px;
+    border-radius: 4px;
+    color: var(--text-secondary-grey-3, #111112); 
+    font-size: 14px;
+}
+
+.note-field:hover::placeholder {
+    opacity: 0;
+    transition: opacity 0.2s ease-out;
+}
+
+.note-box {
+    border-radius: 4px;
+    background: var(--surface-light, #F8FAFC);
+    border: 2px solid var(--onyx, #000);
+    box-shadow: 4px 4px 0px 0px #000;
+    font-family: 'Lustria';
+    padding: 20px;
+}
+
+label {
+    color: var(--text-secondary-grey-2, #292b32);
+    font-weight: 200;
+    font-family: 'Lustria';
+    line-height: 30px;
+}
+
+.btn-save {
+    display: flex;
+    width: 80px;
+    margin-top: 18px;
+    height: 28px;
+    padding: 8px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    border-radius: 100px;
+    border: 1px solid var(--onyx, #000);
+    background: var(--white,#A6C4FA);
+    font-family: 'Lustria';
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.hash-box {
+    height: 100px;
+}
+
+.url-background {
+    background-color: #c0c2c0;
+}
+
+/* Home */
+.header-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.home-brand {
+    color: #000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 44px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-top: 50px;
+}
+
+.home {
+    display: flex;
+    align-items: center;
+    width: 445px;
+    height: 150px;
+    padding: 16px 20px 16px 32px;
+    gap: 10px;
+    border-radius: 24px;
+    border: 6px solid var(--onyx, #000);
+    background: var(--white, #FFF);
+    box-shadow: 10px 10px 0px 0px #000;
+    color: var(--onyx, #000);
+    font-family: Inter;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 70px;
+    margin-bottom: 50px;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    overflow: hidden;
+
+}
+
+.line-left {
+    margin-left: 700px;
+    margin-top: 100px;
+}
+
+.line-right {
+    margin-right: 650px;
+    margin-top: 100px;
+
+}
+.create {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    padding: 16px 20px;
+    gap: 10px;
+    border-radius: 4px;
+    border: 2px solid var(--onyx, #000);
+    background: var(--white, #FFF);
+    box-shadow: 4px 4px 0px 0px #000;
+    color: var(--onyx, #000);
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px; 
+}
+
+.create a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--onyx, #000);
+}
+
+.create a:hover {
+    color: rgb(11, 22, 91);
+}
+
+.line svg {
+    width: 100%;
+}
+
+.brand-about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    color: #000;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 44px;
+    font-weight: 200;
+    text-align: center;
+}
+
+.text-about {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+}
+
+.error {
+    font-size: 50px;
+    text-align: center;
+    color: #292b32;
+}
+
+.error-p {
+    font-size: 18px;
+    text-align: center;
+}
+
+
